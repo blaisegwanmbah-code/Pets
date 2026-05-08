@@ -12,5 +12,7 @@ router.get('/login', adminController.getLogin);
 router.post('/login', adminController.postLogin);
 router.get('/dashboard', adminController.getDashboard);
 router.post('/puppies/add', upload.single('image'), adminController.addPuppy);
+router.post('/puppies/delete/:id', adminController.deletePuppy);
+router.post('/puppies/status/:id', adminController.togglePuppyStatus);
 
 export default router;

@@ -50,5 +50,34 @@ export const adminController = {
     } catch (error) {
       res.status(500).send('Error adding puppy');
     }
+  },
+
+  async deletePuppy(req: any, res: any) {
+    if (req.cookies.admin_auth !== 'true') return res.status(403).send('Forbidden');
+    try {
+      const { id } = req.params;
+      const data = await dbService.getData();
+      data.puppies = (data.puppies || []).filter((p: any) => p.id !== id);
+      await dbService.updateData(data);
+      res.redirect('/admin/dashboard');
+    } catch (error) {
+      res.status(500).send('Error deleting puppy');
+    }
+  },
+
+  async togglePuppyStatus(req: any, res: any) {
+    if (req.cookies.admin_auth !== 'true') return res.status(403).send('Forbidden');
+    try {
+      const { id } = req.params;
+      const data = await dbService.getData();
+      const puppy = (data.puppies || []).find((p: any) => p.id === id);
+      if (puppy) {
+        puppy.status = puppy.status === 'Available' ? 'Reserved' : 'Available';
+        await dbService.updateData(data);
+      }
+      res.redirect('/admin/dashboard');
+    } catch (error) {
+      res.status(500).send('Error updating status');
+    }
   }
 };

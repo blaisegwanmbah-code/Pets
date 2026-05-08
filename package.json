@@ -1,12 +1,12 @@
 {
-  "name": "react-example",
+  "name": "minigoodoodle",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "tsx server.ts",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
@@ -16,16 +16,16 @@
     "@vitejs/plugin-react": "^5.0.4",
     "axios": "^1.16.0",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^17.2.3",
-    "ejs": "^5.0.2",
-    "express": "^4.21.2",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.22.1",
     "form-data": "^4.0.5",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
-    "multer": "^2.1.1",
+    "multer": "^1.4.5-lts.1",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
-    "uuid": "^14.0.0",
+    "uuid": "^9.0.1",
     "vite": "^6.2.3"
   },
   "devDependencies": {

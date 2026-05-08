@@ -35,5 +35,25 @@
         <a href="/#process" class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-doodle-pink transition-colors">The Process</a>
         <a href="/apply" class="bg-doodle-pink text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:shadow-xl hover:brightness-105 transition-all shadow-lg shadow-pink-100">Apply Now</a>
       </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-toggle" class="md:hidden p-2 text-slate-600 focus:outline-none">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-[73px] bg-white z-40 px-6 py-12 flex flex-col space-y-8 animate-in fade-in slide-in-from-top-4 duration-300">
+      <a href="/available" class="text-xl font-bold italic text-slate-800 border-b border-art-border pb-4">Puppy Collection</a>
+      <a href="/#about" class="text-xl font-bold italic text-slate-800 border-b border-art-border pb-4">Our Story</a>
+      <a href="/#process" class="text-xl font-bold italic text-slate-800 border-b border-art-border pb-4">The Process</a>
+      <a href="/apply" class="w-full bg-doodle-pink text-white text-center py-5 rounded-3xl text-sm font-bold uppercase tracking-widest shadow-xl shadow-pink-100">Apply Now</a>
+      
+      <div class="pt-8">
+        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Contact Info</p>
+        <p class="text-slate-600 text-lg">Las Vegas, NV</p>
+        <p class="text-slate-600">(803) 658-2147</p>
+      </div>
     </div>
   </nav>

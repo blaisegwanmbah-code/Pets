@@ -2,12 +2,15 @@
 
 <main class="pt-32 pb-24 bg-art-bg min-h-screen">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <div class="flex justify-between items-center mb-16">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-16">
       <div>
         <h1 class="text-5xl font-bold italic">Admin Dashboard</h1>
         <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mt-2">MiniGooDoodle Management</p>
       </div>
-      <a href="/" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-900">View Public Site</a>
+      <div class="flex gap-4">
+        <a href="/admin/logout" class="px-6 py-3 border border-art-border rounded-full text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 hover:border-red-100 transition-all">Logout</a>
+        <a href="/" class="px-6 py-3 bg-white border border-art-border rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-doodle-pink transition-all">View Site</a>
+      </div>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-12">

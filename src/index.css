@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-doodle-pink: #FF8E8E;
+  --color-art-bg: #FEF9F8;
+  --color-art-border: #F2E5E2;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}

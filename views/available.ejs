@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+
+<main class="pt-32 pb-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+    <div class="mb-20">
+      <span class="text-[10px] font-bold text-doodle-pink uppercase tracking-[0.4em] mb-4 block">Our Collection</span>
+      <h1 class="text-5xl lg:text-7xl font-bold mb-6 text-slate-900 italic">Available <span class="not-italic">Puppies</span></h1>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg font-medium leading-relaxed">
+        Current litters raised in our home, ready to find their forever families.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+      <% if (puppies && puppies.length > 0) { %>
+        <% puppies.forEach(function(puppy) { %>
+          <div class="group bg-[#FEF9F8] rounded-[50px] overflow-hidden border border-art-border transition-all duration-700 hover:shadow-3xl hover:-translate-y-3 <%= puppy.status !== 'Available' ? 'opacity-70 grayscale-[0.3]' : '' %>">
+            <div class="h-80 overflow-hidden relative m-4 rounded-[40px]">
+              <img src="<%= puppy.image %>" alt="<%= puppy.name %>" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+              <div class="absolute top-6 left-6">
+                <span class="px-5 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold text-white shadow-xl <%= puppy.status === 'Available' ? 'bg-doodle-pink' : 'bg-slate-400' %>">
+                  <%= puppy.status %>
+                </span>
+              </div>
+            </div>
+            <div class="p-10">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-3xl font-bold text-slate-800 italic group-hover:text-doodle-pink transition-colors">"<%= puppy.name %>"</h3>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2"><%= puppy.color %></span>
+              </div>
+              <p class="text-slate-500 mb-8 font-medium text-sm tracking-wide">
+                <%= puppy.breed %> — <%= puppy.gender %>
+              </p>
+              <div class="flex justify-between items-center border-t border-art-border mt-6 pt-8">
+                <div class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">
+                  Born <%= puppy.born %>
+                </div>
+                <% if(puppy.status === 'Available') { %>
+                  <a href="https://wa.me/message/YY3JCXDEOTTIC1" class="text-doodle-pink text-xs font-bold uppercase tracking-widest hover:underline flex items-center gap-2">
+                    Inquire
+                  </a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div class="col-span-full py-20 bg-slate-50 rounded-[40px] border-2 border-dashed border-slate-200 text-center">
+          <p class="text-slate-400 font-bold italic">No puppies currently listed. Check back soon!</p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
